@@ -58,8 +58,18 @@ void RoutePlanner::AddNeighbors(RouteModel::Node *current_node) {
 // - Remove that node from the open_list.
 // - Return the pointer.
 
-RouteModel::Node *RoutePlanner::NextNode() {
+// compare function for sort
+bool compare(const RouteModel::Node *n1, const RouteModel::Node *n2) { 
+	return n1->h_value + n1->g_value < n2->h_value + n2->g_value;
+}
 
+RouteModel::Node *RoutePlanner::NextNode() {
+    std::sort(open_list.begin(), open_list.end(), compare);
+  
+  	RouteModel::Node *optimal_node = open_list.front();
+  	open_list.erase(open_list.begin());
+  	
+  	return optimal_node;
 }
 
 
@@ -73,11 +83,17 @@ RouteModel::Node *RoutePlanner::NextNode() {
 
 std::vector<RouteModel::Node> RoutePlanner::ConstructFinalPath(RouteModel::Node *current_node) {
     // Create path_found vector
-    distance = 0.0f;
+        distance = 0.0f;
     std::vector<RouteModel::Node> path_found;
 
     // TODO: Implement your solution here.
-
+  	while (current_node->parent != nullptr) {
+		distance += current_node->distance(*current_node->parent);
+      	path_found.insert(path_found.begin(), *current_node);
+      	current_node = current_node->parent;
+    }
+  	
+  	path_found.insert(path_found.begin(), *current_node);
     distance *= m_Model.MetricScale(); // Multiply the distance by the scale of the map to get meters.
     return path_found;
 
@@ -95,5 +111,18 @@ void RoutePlanner::AStarSearch() {
     RouteModel::Node *current_node = nullptr;
 
     // TODO: Implement your solution here.
+  	start_node->visited = true;
+  	open_list.push_back(start_node);
+  
+    while (open_list.size() > 0) {
+        current_node = NextNode();
+     
+        if (current_node->distance(*end_node) == 0) {
+            m_Model.path = ConstructFinalPath(current_node);
+          	return;
+        } 
+      
+      	AddNeighbors(current_node); 
+    }
 
 }
