@@ -1,0 +1,234 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						2
+					],
+					"hasInstallRule" : true,
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.11.3"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						6
+					]
+				},
+				{
+					"build" : "thirdparty/pugixml",
+					"hasInstallRule" : true,
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "thirdparty/pugixml",
+					"targetIndexes" : 
+					[
+						5
+					]
+				},
+				{
+					"build" : "thirdparty/googletest",
+					"childIndexes" : 
+					[
+						3
+					],
+					"hasInstallRule" : true,
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8.8"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 2,
+					"source" : "thirdparty/googletest"
+				},
+				{
+					"build" : "thirdparty/googletest/googlemock",
+					"childIndexes" : 
+					[
+						4
+					],
+					"hasInstallRule" : true,
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.6.4"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 3,
+					"source" : "thirdparty/googletest/googlemock",
+					"targetIndexes" : 
+					[
+						1,
+						2
+					]
+				},
+				{
+					"build" : "thirdparty/googletest/googlemock/gtest",
+					"hasInstallRule" : true,
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.6.4"
+					},
+					"parentIndex" : 3,
+					"projectIndex" : 4,
+					"source" : "thirdparty/googletest/googletest",
+					"targetIndexes" : 
+					[
+						3,
+						4
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1,
+						2
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "OSM_A_star_search",
+					"targetIndexes" : 
+					[
+						0,
+						6
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						1
+					],
+					"name" : "pugixml",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						5
+					]
+				},
+				{
+					"childIndexes" : 
+					[
+						3
+					],
+					"directoryIndexes" : 
+					[
+						2
+					],
+					"name" : "googletest-distribution",
+					"parentIndex" : 0
+				},
+				{
+					"childIndexes" : 
+					[
+						4
+					],
+					"directoryIndexes" : 
+					[
+						3
+					],
+					"name" : "gmock",
+					"parentIndex" : 2,
+					"targetIndexes" : 
+					[
+						1,
+						2
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						4
+					],
+					"name" : "gtest",
+					"parentIndex" : 3,
+					"targetIndexes" : 
+					[
+						3,
+						4
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "OSM_A_star_search::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-OSM_A_star_search-Debug-3648d417a632cb1f1ad7.json",
+					"name" : "OSM_A_star_search",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "gmock::@4d3ef671eb8d35c7e822",
+					"jsonFile" : "target-gmock-Debug-4699df36bb86d71befb4.json",
+					"name" : "gmock",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "gmock_main::@4d3ef671eb8d35c7e822",
+					"jsonFile" : "target-gmock_main-Debug-0899b6025f193c655f8f.json",
+					"name" : "gmock_main",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "gtest::@608549eaf1de948b0df2",
+					"jsonFile" : "target-gtest-Debug-ae8398ffb4981b677c41.json",
+					"name" : "gtest",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "gtest_main::@608549eaf1de948b0df2",
+					"jsonFile" : "target-gtest_main-Debug-35f2fb0d0f13f7d59f76.json",
+					"name" : "gtest_main",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "pugixml::@611bf7cf6b05006c5233",
+					"jsonFile" : "target-pugixml-Debug-b21b377f5095eaef228c.json",
+					"name" : "pugixml",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test-Debug-d64863fb5d55f3794e80.json",
+					"name" : "test",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/linux-vm/CppND-Route-Planning-Project/build",
+		"source" : "/home/linux-vm/CppND-Route-Planning-Project"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 0
+	}
+}
